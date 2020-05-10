@@ -3,7 +3,7 @@ package com.zay.bookshop
 import java.lang.IllegalStateException
 
 class BookShop(val bookCaseSize: Int = 3) {
-    var isNowClose  = true
+    var isNowClose  = false
 
     fun removeAllBooks() {
         if (isNowClose){
