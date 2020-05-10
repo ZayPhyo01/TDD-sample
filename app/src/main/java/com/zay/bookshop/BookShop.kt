@@ -2,12 +2,15 @@ package com.zay.bookshop
 
 class BookShop {
     fun removeAllBooks() {
-
+        if (books != null) {
+            books = null
+        }
     }
 
-    fun isClose() {
+    fun isClose(): Boolean?
+       = (books == null)
 
-    }
 
-    val books: List<String>? = null
+
+    var books: List<String>? = listOf("mgmg", "aung au")
 }

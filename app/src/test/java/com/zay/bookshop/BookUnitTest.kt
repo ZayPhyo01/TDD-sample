@@ -22,7 +22,6 @@ class BookUnitTest {
         bookShop.removeAllBooks()
         //then bookshop close is true
         Assert.assertEquals(true , bookShop.isClose())
-        //now we remove all books book shop is close is fail, So we are in the fail state.Start to code actual logic in Bookshop class"
-
+        // now we r pass
     }
 }
