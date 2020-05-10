@@ -24,4 +24,17 @@ class BookUnitTest {
         Assert.assertEquals(true , bookShop.isClose())
         // now we r pass
     }
+
+    @Test
+    fun books_whenBooksMoreThanBookCaseSize_shouldReturnBookOverSizeTrue(){
+        //Give an bookshop object
+        val books = BookShop(bookCaseSize = 5)
+        //when set 7 books
+        books.books = listOf("java" ,"android advance","c++ beginner" ,"biology","english speaking" ,"how to install window" ,
+            "coroutine kotlin")
+        //then books are more than size of book case return bookoversize true
+        Assert.assertTrue(books.isBookOverSize())
+        //we are pass in fail state , something wrong!
+
+    }
 }
