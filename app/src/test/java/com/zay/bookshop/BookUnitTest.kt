@@ -13,6 +13,8 @@ class BookUnitTest {
         //then return empty books
         Assert.assertNull(booksShop.books)
 
+        //Now we are pass
+
     }
 
     @Test
@@ -23,7 +25,7 @@ class BookUnitTest {
         bookShop.removeAllBooks()
         //then bookshop close is true
         Assert.assertEquals(true , bookShop.isClose())
-        // now we r pass
+        // but now we fail
     }
 
     @Test
