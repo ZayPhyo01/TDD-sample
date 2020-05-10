@@ -1,6 +1,7 @@
 package com.zay.bookshop
 
-class BookShop(bookCaseSize: Int = 3) {
+class BookShop(val bookCaseSize: Int = 3) {
+    var isNowClose  = true
     fun removeAllBooks() {
         if (books != null) {
             books = null
@@ -10,8 +11,10 @@ class BookShop(bookCaseSize: Int = 3) {
     fun isClose(): Boolean?
        = (books == null)
 
+
+
     fun isBookOverSize(): Boolean {
-        return true
+        return bookCaseSize < books?.size!!
     }
 
 

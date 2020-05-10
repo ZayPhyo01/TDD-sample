@@ -2,6 +2,7 @@ package com.zay.bookshop
 
 import org.junit.Assert
 import org.junit.Test
+import java.lang.IllegalStateException
 
 class BookUnitTest {
     @Test//subjectUnderTest_actionOrInput_resultState
@@ -28,7 +29,7 @@ class BookUnitTest {
     @Test
     fun books_whenBooksMoreThanBookCaseSize_shouldReturnBookOverSizeTrue(){
         //Give an bookshop object
-        val books = BookShop(bookCaseSize = 5)
+        val books = BookShop(bookCaseSize = 3)
         //when set 7 books
         books.books = listOf("java" ,"android advance","c++ beginner" ,"biology","english speaking" ,"how to install window" ,
             "coroutine kotlin")
@@ -36,5 +37,15 @@ class BookUnitTest {
         Assert.assertTrue(books.isBookOverSize())
         //we are pass in fail state , something wrong!
 
+    }
+
+    @Test(expected = IllegalStateException::class)
+    fun bookshopisClose_withoutRemoveAllBooks_shouldReturnIllegalState() {
+        //Give an bookshop object
+        val books = BookShop()
+        //when close before remove all books
+        books.isNowClose = true
+        //then calling remove all books after close , return illegal state
+        books.removeAllBooks()
     }
 }
